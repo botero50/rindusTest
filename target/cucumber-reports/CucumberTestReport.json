@@ -1,0 +1,130 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "User can add items to the cart and then decrease the quantity",
+        "description": "",
+        "id": "amazon-cart-feature;user-can-add-items-to-the-cart-and-then-decrease-the-quantity",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3072601900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on the \"https://www.amazon.com\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.amazon.com",
+                  "offset": 16
+                }
+              ],
+              "location": "CartStepDefinitions.user_is_on_page(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2272701000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "The user searchs for a \"hats for men\" on the search bar",
+            "match": {
+              "arguments": [
+                {
+                  "val": "hats for men",
+                  "offset": 24
+                }
+              ],
+              "location": "CartStepDefinitions.user_searchs_for(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 10844450300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "The user adds \"2\" items for the first item appearing",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 15
+                }
+              ],
+              "location": "CartStepDefinitions.user_adds_items_(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1778720600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "The user Opens the cart and check that total price and quantity are correct",
+            "match": {
+              "location": "CartStepDefinitions.user_opens_carat_and_check_price()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 639231000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "The user Reduces the quantity of the item to \"1\" in Cart for the item",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 46
+                }
+              ],
+              "location": "CartStepDefinitions.user_reduces_quantity(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1149236500,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "The user check that total price and quantity are correct",
+            "match": {
+              "location": "CartStepDefinitions.user_checks_total_price()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 648181200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Close the browser",
+            "match": {
+              "location": "CartStepDefinitions.close_the_browser()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Amazon cart Feature",
+    "description": "",
+    "id": "amazon-cart-feature",
+    "keyword": "Feature",
+    "uri": "login.feature"
+  }
+]

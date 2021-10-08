@@ -1,0 +1,33 @@
+Feature: Facebook registration page
+
+Scenario Outline: a user can be created
+
+Given The user is on "Facebook" - "registration" page
+When the user fills the registration form with a "<sex>" user
+	And the user clicks on the registration button and confirm the email
+Then The user is being created
+	And The user can login in the application 
+	
+Examples:
+	| 	page 			|	subPage		| 		userName	| 	userLastName		|		email 		| password	|	age	|		sex	|
+	| https://www.amazon.com	| 	registration	|	<random_string>		| 	automation		|		<random_email>	| Asdfqwe123* 	|	21	|		m	|	
+	| https://www.amazon.com	| 	registration	|	<random_string>		| 	automation		|		<random_email>	| Asdfqwe123* 	|	21	|		f	|
+	| https://www.amazon.com	| 	registration	|	<random_string>		| 	automation		|		<random_email>	| Asdfqwe123* 	|	21	|	personalized	|
+
+Scenario Outline: registration page is validating the fields
+
+Given The user is on "<page>" - "<subPage>" page
+When the user fills the registration form using userName: "<userName>", userLastName: "<userLastName>", email: "<email>", password: "<password>", age: "<age>", sex: "<sex>"
+	And the user clicks on the registration button on the registration page
+Then The user checks the error "<error>" on the registration page
+	
+	
+Examples:
+	| 	page 			|	subPage		| 		userName	| 	userLastName	|		email 		| password	|	age	|	sex		|								error							| 
+	| https://www.amazon.com	| 	registration	|				| 	automation	|		<random_email>	| Asdfqwe123* 	|	21	|		m	|						how is your name?						| 
+	| https://www.amazon.com	| 	registration	|		<random_string>	| 			|		<random_email>	| Asdfqwe123* 	|	21	|		m	|						how is your name?						| 
+	| https://www.amazon.com	| 	registration	|		<random_string>	| 	automation	|				| Asdfqwe123*	|	21	|		m	| 	you will use this information to access your account		| 
+	| https://www.amazon.com	| 	registration	|		<random_string>	| 	automation	|		<random_email>	|		|	21	|		m	| 	add a combination of 6 numbers, letters						|
+	| https://www.amazon.com	| 	registration	|		<random_string>	| 	automation	|		<random_email>	| Asdfqwe123* 	|		|		m	| 						how old are you?						| 
+
+	
